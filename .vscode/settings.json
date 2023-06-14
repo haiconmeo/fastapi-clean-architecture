@@ -12,5 +12,8 @@
         "sqlalchemy",
         "starlette",
         "uvicorn"
-    ]
+    ],
+    "[handlebars]": {
+        "editor.formatOnSave": false
+    }
 }

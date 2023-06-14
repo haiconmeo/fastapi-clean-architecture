@@ -32,6 +32,7 @@ rq = "^1.14.1"
 langdetect = "^1.0.9"
 pytesseract = "^0.3.10"
 more-itertools = "^9.1.0"
+pybars3 = "^0.9.7"
 
 
 [tool.poetry.group.dev.dependencies]
