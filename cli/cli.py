@@ -65,3 +65,8 @@ for template_file in template_files:
 with open('app/db_model.py', 'a') as file:
     file.write(f'from app.modules.{module}.model import {model}\n')
 # add router
+
+with open('app/router.py', 'a') as file:
+    file.write(f'from app.modules.{module} import {module}_router\n')
+with open('app/router.py', 'a') as file:
+    file.write(f'api_router.include_router({module}_transport.get_router(),prefix="/{module}", tags=["{module}"])\n')

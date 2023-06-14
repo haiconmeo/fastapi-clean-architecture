@@ -3,7 +3,7 @@ from app.common.base_transport import BaseTransport
 from app.modules.{{name}}.storage.{{name}}_storage import {{model}}Store
 from app.modules.{{name}}.model import {{model}}Create,{{model}}Update,{{model}}
 
-class {{name}}Transport(BaseTransport):
+class {{model}}Transport(BaseTransport):
     def __init__(self) -> None:
         self.store = {{model}}Store({{model}})
         super().__init__(self.store)
