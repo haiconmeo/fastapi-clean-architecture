@@ -1,0 +1,16 @@
+{
+    "cSpell.words": [
+        "autoflush",
+        "decamelize",
+        "dotenv",
+        "fastapi",
+        "jsonable",
+        "passlib",
+        "pydantic",
+        "selectinload",
+        "sessionmaker",
+        "sqlalchemy",
+        "starlette",
+        "uvicorn"
+    ]
+}
