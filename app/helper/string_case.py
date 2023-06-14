@@ -8,6 +8,7 @@ PASCAL_RE = re.compile(r"([^\-_]+)")
 SPLIT_RE = re.compile(r"([\-_]*[A-Z][^A-Z]*[\-_]*)")
 UNDERSCORE_RE = re.compile(r"(?<=[^\-_])[\-_]+[^\-_]")
 
+
 def to_snake_case(string: str) -> str:
     return ''.join(['_' + i.lower() if i.isupper() else i for i in string]).lstrip('_')
 
@@ -30,9 +31,6 @@ def convert_filter_to_camel_case(filter='{}'):
     else:
         filter_sk = [_dict_to_snake_case(fl) for fl in filter_json]
     return json.dumps(filter_sk)
-
-
-
 
 
 def pascalize(str_or_iter):
@@ -278,3 +276,21 @@ def _separate_words(string, separator="_"):
 
 def _dict_to_snake_case(dict_):
     return {to_snake_case(k): dict_[k] for k in dict_}
+
+
+def singularize(noun):
+    if noun.endswith("s") or noun.endswith("es"):
+        singular_form = noun[:-1]
+
+        if singular_form.endswith("i") and not singular_form.endswith("ei"):
+            singular_form = singular_form[:-1] + "y"
+        elif singular_form.endswith("ves"):
+            singular_form = singular_form[:-3] + "f"
+        elif singular_form.endswith("es"):
+            singular_form = singular_form[:-2]
+        elif singular_form.endswith("ss"):
+            singular_form = noun
+
+        return singular_form
+
+    return noun

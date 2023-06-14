@@ -1150,6 +1150,22 @@ files = [
 ]
 
 [[package]]
+name = "inflect"
+version = "4.0.0"
+description = "Correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "inflect-4.0.0-py2.py3-none-any.whl", hash = "sha256:b7043603072911713f0c82ca0942078d5d53d8ac249ca2e1c25586d9cfb866d4"},
+    {file = "inflect-4.0.0.tar.gz", hash = "sha256:4bafdc6bcfd83ee1e5874607577f7388cd3492cbdb06fc875979c6398ad41ab0"},
+]
+
+[package.extras]
+docs = ["jaraco.packaging (>=3.2)", "rst.linker (>=1.9)", "sphinx"]
+testing = ["nose", "pygments", "pytest (>=3.5,!=3.7.3)", "pytest-black-multipy", "pytest-checkdocs (>=1.2.3)", "pytest-cov", "pytest-flake8"]
+
+[[package]]
 name = "ipykernel"
 version = "6.23.2"
 description = "IPython Kernel for Jupyter"
@@ -3779,4 +3795,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "d0bbcb825eca09d87718848e9671d68defee1a893b0ab94fdb57e288bd511929"
+content-hash = "08b347dd9bee0775dca86f7da6b0b4d755a367ab835129b6eb0bf86057c4e0d4"

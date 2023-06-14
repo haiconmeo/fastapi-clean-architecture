@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "autoflush",
+        "codegen",
         "decamelize",
         "dotenv",
         "fastapi",
@@ -11,6 +12,7 @@
         "pydantic",
         "selectinload",
         "sessionmaker",
+        "sqlacodegen",
         "sqlalchemy",
         "starlette",
         "uvicorn"

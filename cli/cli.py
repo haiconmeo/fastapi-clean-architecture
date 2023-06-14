@@ -5,7 +5,7 @@ import os
 import sys
 import argparse
 sys.path.append(".")
-from app.helper.string_case import pascalize
+from app.helper.string_case import pascalize, singularize
 
 
 template_files = []
@@ -35,9 +35,10 @@ for template_file in template_files:
     template = compiler.compile(template_source)
 
     # Prepare the data for rendering
+    model = singularize( pascalize(module))
     data = {
         'name': module,
-        'model': pascalize(module),
+        'model': model,
     }
 
     # Render the template with the data
@@ -62,5 +63,5 @@ for template_file in template_files:
 
 # add model
 with open('app/db_model.py', 'a') as file:
-    file.write(f'from app.modules.{module}.model import {pascalize(module)}\n')
+    file.write(f'from app.modules.{module}.model import {model}\n')
 # add router
