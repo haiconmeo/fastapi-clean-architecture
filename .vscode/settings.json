@@ -5,7 +5,9 @@
         "dotenv",
         "fastapi",
         "jsonable",
+        "pascalize",
         "passlib",
+        "pybars",
         "pydantic",
         "selectinload",
         "sessionmaker",
@@ -15,5 +17,6 @@
     ],
     "[handlebars]": {
         "editor.formatOnSave": false
-    }
+    },
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"s
 }

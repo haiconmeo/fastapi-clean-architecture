@@ -4,22 +4,22 @@ from pydantic import BaseModel
 
 
 # Shared properties
-class {{name2}}Base(BaseModel):
+class {{model}}Base(BaseModel):
     pass
 
 
 # Properties to receive on item creation
-class {{name2}}Create({{name2}}Base):
+class {{model}}Create({{model}}Base):
     title: str
 
 
 # Properties to receive on item update
-class {{name2}}Update({{name2}}Base):
+class {{model}}Update({{model}}Base):
     pass
 
 
 # Properties shared by models stored in DB
-class {{name2}}InDBBase({{name2}}Base):
+class {{model}}InDBBase({{model}}Base):
     id: int
 
 
@@ -28,10 +28,10 @@ class Config:
 
 
 # Properties to return to client
-class {{name2}}({{name2}}InDBBase):
+class {{model}}({{model}}InDBBase):
     pass
 
 
 # Properties properties stored in DB
-class {{name2}}InDB({{name2}}InDBBase):
+class {{model}}InDB({{model}}InDBBase):
     pass

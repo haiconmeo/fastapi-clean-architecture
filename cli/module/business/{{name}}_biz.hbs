@@ -1,8 +1,8 @@
 from app.common.base_business import BaseBiz
-from app.modules.{{name}}s.storage import {{name2}}Store
+from app.modules.{{name}}s.storage import {{model}}Store
 
 
-class {{name2}}Biz(BaseBiz):
-    def __init__(self,storage: {{name2}}Store):
+class {{model}}Biz(BaseBiz):
+    def __init__(self,storage: {{model}}Store):
         self.storage = storage
         super.__init__(storage)

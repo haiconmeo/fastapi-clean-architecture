@@ -1,16 +1,16 @@
 
 from app.common.base_transport import BaseTransport
-from app.modules.{{name}}.storage.{{name}}_storage import {{name2}}Store
-from app.modules.{{name}}.model import {{name2}}Create,{{name2}}Update,{{name2}}
+from app.modules.{{name}}.storage.{{name}}_storage import {{model}}Store
+from app.modules.{{name}}.model import {{model}}Create,{{model}}Update,{{model}}
 
 class {{name}}Transport(BaseTransport):
     def __init__(self) -> None:
-        self.store = {{name2}}Store({{name2}})
+        self.store = {{model}}Store({{model}})
         super().__init__(self.store)
 
     def get_router(self):
         return self.router
 
 
-{{name}}_transport = {{name2}}Transport()
-{{name}}_transport.configure_routes({{name2}}Create,{{name2}}Update)
+{{name}}_transport = {{model}}Transport()
+{{name}}_transport.configure_routes({{model}}Create,{{model}}Update)

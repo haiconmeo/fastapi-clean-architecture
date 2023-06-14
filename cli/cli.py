@@ -1,6 +1,12 @@
-import argparse
-import os
+# autopep8: off
+
 from pybars import Compiler
+import os
+import sys
+import argparse
+sys.path.append(".")
+from app.helper.string_case import pascalize
+
 
 template_files = []
 parser = argparse.ArgumentParser(description='Generate file from template.')
@@ -31,7 +37,7 @@ for template_file in template_files:
     # Prepare the data for rendering
     data = {
         'name': module,
-        'name2': module,
+        'model': pascalize(module),
     }
 
     # Render the template with the data
@@ -51,4 +57,10 @@ for template_file in template_files:
     with open(output_file_path, 'w') as f:
         f.write(rendered)
 
+
     print(f"File '{output_file_path}' created successfully.")
+
+# add model
+with open('app/db_model.py', 'a') as file:
+    file.write(f'from app.modules.{module}.model import {pascalize(module)}\n')
+# add router
