@@ -54,12 +54,6 @@ bash
 Copy code
 
     python3 cli/cli.py module_name
-## Conclusion
-
-The FastAPI Clean Architecture project provides a solid foundation for developing scalable and maintainable web applications. The use of Clean Architecture principles ensures a clear separation of concerns and facilitates easy testing and extensibility. By following the modular structure with four distinct layers, this project enables efficient development and enhances code organization and reusability.
-    curl -sSL https://install.python-poetry.org | python3 -
-    or
-    pip install poetry
 
 ## Install library
 
@@ -74,10 +68,6 @@ The FastAPI Clean Architecture project provides a solid foundation for developin
 
     poetry shell
 
-## Check data status
-
-    python ./app/backend_pre_start.py
-
 ## Run migrations
 
     alembic upgrade head
@@ -90,19 +80,18 @@ The FastAPI Clean Architecture project provides a solid foundation for developin
 
     uvicorn app.main:app --reload
 
-If you created a new model in `./backend/app/app/models/`, make sure to import it in `./backend/app/app/db/base.py`, that Python module (`base.py`) that imports all the models will be used by Alembic.
+If you created a new model in `app/db_model`, 
+that imports all the models will be used by Alembic.
 
 After changing a model (for example, adding a column), inside the container, create a revision, e.g.:
 
     alembic revision --autogenerate -m "Add customm"
 
-# Run job queue 
 
-    rq worker --url redis://localhost:6379/1
+## Conclusion
 
+The FastAPI Clean Architecture project provides a solid foundation for developing scalable and maintainable web applications. The use of Clean Architecture principles ensures a clear separation of concerns and facilitates easy testing and extensibility. By following the modular structure with four distinct layers, this project enables efficient development and enhances code organization and reusability.
+    curl -sSL https://install.python-poetry.org | python3 -
+    or
+    pip install poetry
 
-                   Installation on Linux:
-                   apt-get install tesseract-ocr libtesseract-dev poppler-utils
-
-                   Installation on MacOS:
-                   brew install tesseract
