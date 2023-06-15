@@ -15,7 +15,7 @@ class AuthTransport():
 
     def configure_routes(self):
         @self.router.post("/login")
-        def login(userLogin: UserLogin, db_: Session = Depends(get_db)):
+        def login(userLogin: UserLogin, db_=Depends(get_db)):
             return self.biz.authenticate(db=db_, userLogin=userLogin)
 
     def get_router(self):

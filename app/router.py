@@ -11,3 +11,5 @@ api_router.include_router(user_transport.get_router(),
                           prefix="/users", tags=["users"])
 api_router.include_router(item_transport.get_router(),
                           prefix="/items", tags=["items"])
+from app.modules.products import product_transport
+api_router.include_router(product_transport.get_router(),prefix="/products", tags=["products"])

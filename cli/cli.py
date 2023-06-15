@@ -36,7 +36,9 @@ for template_file in template_files:
 
     # Prepare the data for rendering
     model = singularize( pascalize(module))
+    name_sing = singularize(module)
     data = {
+        'name_sing': name_sing,
         'name': module,
         'model': model,
     }
@@ -49,8 +51,8 @@ for template_file in template_files:
     output_folder = f'app/modules/{module}'
     output_file_path = template_file.replace(template_folder, output_folder)
     output_file_path = output_file_path.replace('hbs', 'py')
-    if '{{name}}' in output_file_path:
-        output_file_path = output_file_path.replace("{{name}}", module)
+    if '{{name_sing}}' in output_file_path:
+        output_file_path = output_file_path.replace("{{name_sing}}", name_sing)
     # Create the output folder if it doesn't exist
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
 
@@ -67,6 +69,6 @@ with open('app/db_model.py', 'a') as file:
 # add router
 
 with open('app/router.py', 'a') as file:
-    file.write(f'from app.modules.{module} import {module}_router\n')
+    file.write(f'from app.modules.{module} import {name_sing}_transport\n')
 with open('app/router.py', 'a') as file:
-    file.write(f'api_router.include_router({module}_transport.get_router(),prefix="/{module}", tags=["{module}"])\n')
+    file.write(f'api_router.include_router({name_sing}_transport.get_router(),prefix="/{module}", tags=["{module}"])\n')

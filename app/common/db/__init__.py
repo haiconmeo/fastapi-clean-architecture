@@ -1,1 +1,1 @@
-from .get_db import get_db
+from .deps import get_db, get_current_user
